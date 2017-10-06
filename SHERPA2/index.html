@@ -1,0 +1,123 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<title>index</title>
+	<link rel="icon" href="" sizes="16x16">
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<script>window.alert("WELCOME TO SHERPA WEBPAGE");</script>
+	<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css"></head>
+<body>
+	<header>
+		<nav>
+			<h1>SHERPA</h1>
+			<ul>
+				<li><a href="index.html">HOME</a></li>
+				<li><a href="pro.html">LOGIN</a></li>
+				<li><a href="trans.html">SEARCH</a></li>
+			</ul>
+		</nav>
+	</header>
+	<h2>WELCOME TO SERPA</h2>
+	
+	<div class="w3-content w3-section">
+
+	<img class="mySlides w3-animate-fading" alt="" src="images/a.jpg" style="width:100%; height:50%;">
+	<img class="mySlides w3-animate-fading" alt="" src="images/g.jpg" style="width:100%; height:50%;">
+	<img class="mySlides w3-animate-fading" alt="" src="images/n.jpg" style="width:100%; height:50%;">
+	<img class="mySlides w3-animate-fading" alt="" src="images/c.jpg" style="width:100%; height:50%;">
+
+	</div>
+	
+	<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}
+    x[myIndex-1].style.display = "block";
+    setTimeout(carousel, 4000);
+}
+</script>
+
+<div id="calend" style="text-align: center;">
+<div class="month">
+  <ul>
+    <li class="prev">❮</li>
+    <li class="next">❯</li>
+    <li style="text-align:center">
+      October<br>
+      <span style="font-size:18px">2017</span>
+    </li>
+  </ul>
+</div>
+
+		<ul class="weekdays">
+		  <li>Mo</li>
+		  <li>Tu</li>
+		  <li>We</li>
+		  <li>Th</li>
+		  <li>Fr</li>
+		  <li>Sa</li>
+		  <li>Su</li>
+		</ul>
+
+		<ul class="days">
+		  <li>1</li>
+		  <li>2</li>
+		  <li>3</li>
+		  <li>4</li>
+		  <li>5</li>
+		  <li>6</li>
+		  <li>7</li>
+		  <li>8</li>
+		  <li>9</li>
+		  <li><span class="active">10</span></li>
+		  <li>11</li>
+		  <li>12</li>
+		  <li>13</li>
+		  <li>14</li>
+		  <li>15</li>
+		  <li>16</li>
+		  <li>17</li>
+		  <li>18</li>
+		  <li>19</li>
+		  <li>20</li>
+		  <li>21</li>
+		  <li>22</li>
+		  <li>23</li>
+		  <li>24</li>
+		  <li>25</li>
+		  <li>26</li>
+		  <li>27</li>
+		  <li>28</li>
+		  <li>29</li>
+		  <li>30</li>
+		  <li>31</li>
+		</ul>
+
+</div>
+
+	<footer>@2017 SHERPA website</footer>
+	<div style="float: right;">
+	<p id="demo"></p>
+	<script>
+	document.getElementById("demo").innerHTML = Date();
+	</script>
+
+	</div>
+		<audio controls autoplay loop>
+  	<source src="Sia.mp3" type="audio/ogg">
+ 	<source src="Sia.mp3" type="audio/mpeg">
+	</audio>
+</body>
+
+</html>
