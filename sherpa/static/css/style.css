@@ -1,11 +1,6 @@
 
 /* navbar styling */
 
-.navbar-default {
-  /*background-color: #00899E;*/
-  height: 54px;
-}
-
 .navbar-nav li a {
   color: #FFFF;
 }
@@ -46,5 +41,16 @@ footer ul {
   li {
     float: left;
     margin-left: 15px;
+  }
+}
+
+.panel {
+  border-radius: 8px;
+  background-color: #F8F8F8;
+}
+
+.panel-heading {
+  h1 {
+    text-align: center;
   }
 }

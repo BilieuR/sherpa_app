@@ -1,0 +1,38 @@
+{% include 'partials/header.html' %}
+
+{% block content %}
+
+  {% if form.errors %}
+   <p class="error">Sorry, that's not a valid username or password</p>
+  {% endif %}
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 col-md-offset-4">
+        <div class="log-in panel">
+          <div class="panel-heading">
+            <h1 class="text-center">Register</h1>
+              <div class="panel-body">
+                <div class="form-group">
+                  <form action="/sherpa/auth" method="post">{% csrf_token %}
+                    <label for="username"> Username:</label><br>
+                    <input class="input-lg form-control" type="text" name="username" value="" id="username">
+                    <br>
+                    <label for="username"> Password:</label><br>
+                    <input class="input-lg form-control" type="text" name="username" value="" id="password">
+                    <label for="username"> Password Confirmation:</label><br>
+                    <input class="input-lg form-control" type="text" name="username" value="" id="password">
+                    <br>
+                    <input class="btn btn-lg btn-primary" type="submit" value="Login" />
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+{% endblock content %}
+
+{% include 'partials/footer.html' %}

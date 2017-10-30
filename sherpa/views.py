@@ -10,7 +10,7 @@ from .forms import UserLoginForm
 
 def index_view(request):
     context = {
-    
+
     }
     return render(request, 'index.html', context)
 
@@ -19,7 +19,7 @@ def index_view(request):
 # Location Views #
 #                #
 
-                
+
 def add_view(request):
     if(request.method == 'POST'):
         title = request.POST['title']
@@ -43,5 +43,5 @@ def location_list_view(request):
     locations = Location.objects.all()[:10]
     context = {
         'locations': locations
-    }   
+    }
     return render(request, 'location_list.html', context)
