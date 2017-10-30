@@ -2,11 +2,12 @@
 /* navbar styling */
 
 .navbar-default {
-  background-color: #00899E;
+  /*background-color: #00899E;*/
   height: 54px;
-  .navbar-nav li a {
-    color: #FFF;
-  }
+}
+
+.navbar-nav li a {
+  color: #FFFF;
 }
 
 .navbar-container {
@@ -16,4 +17,34 @@
 
 .navbar-nav > li {
   font-size: 16px;
+}
+
+
+/* footer */
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: $gray-light;
+}
+
+footer a {
+  color: #555;
+  &:hover {
+    color: #222;
+  }
+}
+
+footer small {
+  float: left;
+}
+
+footer ul {
+  float: right;
+  list-style: none;
+  li {
+    float: left;
+    margin-left: 15px;
+  }
 }
