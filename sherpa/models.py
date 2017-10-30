@@ -11,6 +11,8 @@ class Location(models.Model):
     description = models.TextField()
     category = models.CharField(max_length=200, default='NULL')
     image = models.CharField(max_length=499, default='NULL')
+    latitude = models.DecimalField(max_digits=9, decimal_places=6, null=True, blank=True)
+    longitude = models.DecimalField(max_digits=9, decimal_places=6, null=True, blank=True)
     created_at = models.DateTimeField(default=datetime.now, blank=True)
 
    

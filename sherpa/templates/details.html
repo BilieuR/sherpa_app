@@ -4,10 +4,35 @@
     <title>Location</title>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+    <style>
+       #map {
+        height: 400px;
+        width: 100%;
+       }
+    </style>
   </head>
   <body>
     <h1>{{location.title}}</h1>
     <p>{{location.description}}</p>
+
+    <div id="map"></div>
+    <script>
+      function initMap() {
+        var marker = {lat: -27.4954, lng: 153.0120};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 15,
+          center: marker
+        });
+        var marker = new google.maps.Marker({
+          position: marker,
+          map: map
+        });
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMMGCCOG2uagpomuWo1I4va9qa9dIHtWU&callback=initMap">
+    </script>
+
     <a href="/sherpa/location_list"><h1><< NEW SEARCH</a></h1>
 
     <br>
