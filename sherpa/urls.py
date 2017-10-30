@@ -8,6 +8,7 @@ urlpatterns = [
     url(r'^details/(?P<id>\w{0,50})/$', views.details_view),
     url(r'^add', views.add_view, name='add'),
     url(r'^location_list/$', views.location_list_view),
+    url(r'^college_list/$', views.college_list_view, name='college_list'),
 
 
     # user auth urls

@@ -8,8 +8,11 @@ from django.db import models
 
 class Location(models.Model):
     title = models.CharField(max_length=200)
-    text = models.TextField()
+    description = models.TextField()
+    category = models.CharField(max_length=200, default='NULL')
+    image = models.CharField(max_length=499, default='NULL')
     created_at = models.DateTimeField(default=datetime.now, blank=True)
+
    
     def __str__(self):
         return self.title

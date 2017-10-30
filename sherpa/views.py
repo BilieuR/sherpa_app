@@ -23,9 +23,10 @@ def index_view(request):
 def add_view(request):
     if(request.method == 'POST'):
         title = request.POST['title']
-        text = request.POST['text']
+        description = request.POST['description']
+        category = request.POST['category']
 
-        location = Location(title=title, text=text)
+        location = Location(title=title, description=description, category=category)
         location.save()
 
         return redirect('/sherpa')
@@ -45,3 +46,10 @@ def location_list_view(request):
         'locations': locations
     }
     return render(request, 'location_list.html', context)
+
+def college_list_view(request):
+    locations = Location.objects.all()[:10]
+    context = {
+        'locations': locations
+    }
+    return render(request, 'college_list.html', context)
