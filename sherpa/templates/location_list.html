@@ -2,21 +2,37 @@
 {% include 'partials/header.html' %}
 
 <h1>Choose your desired category:<h1>
+		{% if user.userType == "student" %}
+			<table style="width:100%">
+				<h2>User orientated:</h2>
+					<td><a href="/sherpa/college_list">Colleges<img src="https://i.pinimg.com/originals/6d/4a/f9/6d4af9acb1a421014a53da3131188725.png" alt="" border=3 height=100 width=100></img></a></td>
+					<td><a href="/sherpa/library_list">Libraries<img src="https://architecturesaveourlives.files.wordpress.com/2012/01/library.jpg" alt="" border=3 height=100 width=100></img></a></td>
+			</table>
+		{% endif %}
+
+
+		{% if user.userType == "businessman" %}
+			<table style="width:100%">
+				<td><a href="/sherpa/industry_list">Industries<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Industry5.svg/2000px-Industry5.svg.png" alt="" border=3 height=100 width=100></img></a></td>
+			</table>
+		{% endif %}
+
+
+		{% if user.userType == "tourist" %}
+			<table style="width:100%">
+				<td><a href="/sherpa/hotel_list">Hotels<img src="http://cdn.mysitemyway.com/icons-watermarks/flat-circle-white-on-black/ocha/ocha_infrastructure-hotel/ocha_infrastructure-hotel_flat-circle-white-on-black_512x512.png" alt="" border=3 height=100 width=100></img></a></td>
+			</table>
+		{% endif %}
+
+<h2>City orientated:</h2>
 <table style="width:100%">
-	<tr>
-		<td><a href="/sherpa/college_list">Colleges<img src="https://i.pinimg.com/originals/6d/4a/f9/6d4af9acb1a421014a53da3131188725.png" alt="" border=3 height=100 width=100></img></a></td>
-		<td><a href="/sherpa/library_list">Libraries<img src="https://architecturesaveourlives.files.wordpress.com/2012/01/library.jpg" alt="" border=3 height=100 width=100></img></a></td>
-		<td><a href="/sherpa/industry_list">Industries<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Industry5.svg/2000px-Industry5.svg.png" alt="" border=3 height=100 width=100></img></a></td>
-	</tr>
-	<tr>
-		<td><a href="/sherpa/hotel_list">Hotels<img src="http://cdn.mysitemyway.com/icons-watermarks/flat-circle-white-on-black/ocha/ocha_infrastructure-hotel/ocha_infrastructure-hotel_flat-circle-white-on-black_512x512.png" alt="" border=3 height=100 width=100></img></a></td>
+
 		<td><a href="/sherpa/parks_list">Parks<img src="http://www.clipartsfree.net/vector/large/picnic4_Vector_Clipart.png" alt="" border=3 height=100 width=100></img></a></td>
 		<td><a href="/sherpa/zoos_list">Zoos<img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/13deae22526107.5631420288c71.jpg" alt="" border=3 height=100 width=100></img></a></td>
-	</tr>
-	<tr>
+
 		<td><a href="/sherpa/mueseums_list">Mueseums<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Japanese_Map_symbol_%28Museum%29.svg/2000px-Japanese_Map_symbol_%28Museum%29.svg.png" alt="" border=3 height=100 width=100></img></a></td>
 		<td><a href="/sherpa/restaurant_list">Restaurants<img src="http://www.symbols.com/gi.php?type=1&id=330&i=1" alt="" border=3 height=100 width=100></img></a></td>
-		<td><a href="/sherpa/malls_list">Malls<img src="https://image.freepik.com/free-icon/shopping-cart-circle_318-27919.jpg" alt="" border=3 height=100 width=100></img></a></td>	</tr>
+		<td><a href="/sherpa/malls_list">Malls<img src="https://image.freepik.com/free-icon/shopping-cart-circle_318-27919.jpg" alt="" border=3 height=100 width=100></img></a></td>
 </table>
 
 {% include 'partials/footer.html' %}

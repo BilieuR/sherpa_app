@@ -19,8 +19,11 @@ def register_view(request):
         username = request.POST['username']
         password = request.POST['password']
 
+
         profile = Profile(first_name=first_name, last_name=last_name, email=email, userType=userType, phoneNumber= phoneNumber, username=username)
         profile.set_password(password)
+        print request.POST['admin']
+        profile.is_superuser = request.POST['admin']
         profile.save()
 
     	return render(request, 'register_success.html')
