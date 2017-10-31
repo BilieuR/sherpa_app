@@ -25,6 +25,7 @@
           <ul class="nav navbar-nav navbar-right">
             
             {% if user.is_authenticated %}
+              <li><a href="/sherpa/logout/">Logout</a></li>
               {% if user.is_superuser %}
                 <li><a href="/sherpa/add">[ADMIN] Add Locations</a></li>
                 <li><a href="/sherpa/register">[ADMIN] Create Admin User</a></li>
