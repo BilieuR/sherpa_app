@@ -20,7 +20,6 @@ class Location(models.Model):
         return self.title
 
 class Users(models.Model):
-	userId = models.IntegerField()
 	username = models.CharField(max_length=16)
 	password = models.CharField(max_length=16)
 	familyName = models.CharField(max_length=20)
