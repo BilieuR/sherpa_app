@@ -2,8 +2,10 @@
 
 {% block content %}
 
-	<h2> Hi {{request.user.username}} you are now Logged in!</h2>
-	<p>Click <a href="/sherpa/logout/">here</a> to logout.</p>
+  <div class="alert alert-success text-center" role="alert">
+    <h2> Hi {{request.user.username}} you are now Logged in!</h2>
+    <p>Click <a href="/sherpa/logout/">here</a> to logout.</p>
+  </div>
 
 {% endblock %}
 
