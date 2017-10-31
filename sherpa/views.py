@@ -19,14 +19,15 @@ def index_view(request):
 # Location Views #
 #                #
 
-
 def add_view(request):
-    if(request.method == 'POST'):
+    if (request.method == 'POST'):
         title = request.POST['title']
         description = request.POST['description']
         category = request.POST['category']
+        latitude = request.POST['latitude']
+        longitude = request.POST['longitude']
 
-        location = Location(title=title, description=description, category=category)
+        location = Location(title=title, description=description, category=category, latitude=latitude, longitude=longitude)
         location.save()
 
         return redirect('/sherpa')
@@ -36,8 +37,9 @@ def add_view(request):
 def details_view(request, id):
     location = Location.objects.get(id=id)
     context = {
-        'location': location
-    }
+        'location': location,
+        'category': location.category,
+           }
     return render(request, 'details.html', context)
 
 def location_list_view(request):

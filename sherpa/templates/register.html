@@ -11,19 +11,40 @@
       <div class="col-md-4 col-md-offset-4">
         <div class="log-in panel">
           <div class="panel-heading">
-            <h1 class="text-center">Register</h1>
+            <h1 class="text-center">Sign Up</h1>
               <div class="panel-body">
                 <div class="form-group">
-                  <form action="/sherpa/auth" method="post">{% csrf_token %}
+                  <form action="/sherpa/register/" method="post">
+                    <label for="firstName"> First Name:</label><br>
+                    <input class="input-lg form-control" type="text" name="firstName" value="test" id="firstName">
+                    <br>
+                    <label for="familyName"> Last Name:</label><br>
+                    <input class="input-lg form-control" type="text" name="familyName" value="test" id="familyName">
+                    <br>
+                    <label for="email"> Email:</label><br>
+                    <input class="input-lg form-control" type="text" name="email" value="test" id="email">
+                    <br>
+                    <label for="phoneNumber"> Phone:</label><br>
+                    <input class="input-lg form-control" type="text" name="phoneNumber" value="0401" id="phoneNumber">
+                    <br>
+
+                    <label for="userType">User Type:</label><br>
+                      <select name="userType" value="tourist" id="userType">
+                        <option value="tourist">Tourist</option>
+                        <option value="student">Student</option>
+                        <option value="businessman">Businessman</option>
+                      </select>
+                    <br><br>
+
                     <label for="username"> Username:</label><br>
-                    <input class="input-lg form-control" type="text" name="username" value="" id="username">
+                    <input class="input-lg form-control" type="text" name="username" value="test" id="username">
                     <br>
-                    <label for="username"> Password:</label><br>
-                    <input class="input-lg form-control" type="text" name="username" value="" id="password">
-                    <label for="username"> Password Confirmation:</label><br>
-                    <input class="input-lg form-control" type="text" name="username" value="" id="password">
+                    <label for="password"> Password:</label><br>
+                    <input class="input-lg form-control" type="text" name="password" value="test" id="password">
+                    <label for="password"> Password Confirmation:</label><br>
+                    <input class="input-lg form-control" type="text" name="password" value="test" id="password">
                     <br>
-                    <input class="btn btn-lg btn-primary" type="submit" value="Login" />
+                    <input class="btn btn-lg btn-primary" type="submit" value="Sign Up"/>
                   </form>
                 </div>
               </div>
