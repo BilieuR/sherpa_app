@@ -35,6 +35,13 @@
                         <option value="businessman">Businessman</option>
                       </select>
                     <br><br>
+                    
+                    {% if user.is_superuser %}
+                      <label for="admin">Admin:</label><br>
+                      <input type="radio" name="admin" value="1"> Yes
+                      <input type="radio" name="admin" value="0" checked> No 
+                      <br><br>
+                    {% endif %}
 
                     <label for="username"> Username:</label><br>
                     <input id="id_username" class="input-lg form-control" type="text" name="username" value="test" id="username">

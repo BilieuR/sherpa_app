@@ -1,7 +1,5 @@
+<!DOCTYPE html>
 {% include 'partials/header.html' %}
-
-{% block content %}
-
 	{% if form.errors %}
 	 <p class="error">Sorry, that's not a valid username or password</p>
 	{% endif %}
@@ -14,7 +12,7 @@
             <h1 class="text-center">Sign In</h1>
             	<div class="panel-body">
                 <div class="form-group">
-									<form action="/sherpa/auth/" method="post">{% csrf_token %}
+									<form action="/sherpa/auth/" method="post">
 										<label for="username"> Username:</label><br>
 										<input class="input-lg form-control" type="text" name="username" value="" id="username">
 										<br>
@@ -30,7 +28,4 @@
 				</div>
 			</div>
 		</div>
-
-{% endblock content %}
-
 {% include 'partials/footer.html' %}

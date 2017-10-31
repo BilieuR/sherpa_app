@@ -23,16 +23,18 @@
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav navbar-right">
-          <!--  if user_signed_in? -->
-
-            <li><a href="/sherpa/add">[ADMIN] Add Locations</a></li>
-            <li><a href="/sherpa/location_list">Search Locations</a></li>
-            <!-- user profile link -->
-            <!-- Logout link -->
-          <!-- else -->
-            <li><a href="/sherpa/login">Login</a></li>
-            <li><a href="/sherpa/register">Sign Up</a></li>
-          <!-- end -->
+            
+            {% if user.is_authenticated %}
+              <li><a href="/sherpa/logout/">Logout</a></li>
+              {% if user.is_superuser %}
+                <li><a href="/sherpa/add">[ADMIN] Add Locations</a></li>
+                <li><a href="/sherpa/register">[ADMIN] Create Admin User</a></li>
+              {% endif %}
+              <li><a href="/sherpa/location_list">Search Locations</a></li>
+              {% else %}
+              <li><a href="/sherpa/login">Login</a></li>
+              <li><a href="/sherpa/register">Sign Up</a></li>
+            {% endif %}
           </ul>
         </div>
       </div>
