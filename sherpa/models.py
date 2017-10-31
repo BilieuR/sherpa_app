@@ -1,8 +1,12 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 from datetime import datetime
-
+from django.dispatch import receiver
+from django.db.models.signals import post_save
 from django.db import models
+from django.contrib.auth.models import User
+from django.contrib.auth.models import AbstractUser
+
 # Create your models here.
 
 
@@ -19,14 +23,6 @@ class Location(models.Model):
     def __str__(self):
         return self.title
 
-class Users(models.Model):
-	username = models.CharField(max_length=16)
-	password = models.CharField(max_length=16)
-	familyName = models.CharField(max_length=20)
-	firstName = models.CharField(max_length=20)
-	email = models.CharField(max_length=30)
-	phoneNumber = models.IntegerField()
-	userType = models.CharField(max_length=4)
-	created_at = models.DateTimeField(default=datetime.now, blank=True)
-
-
+class Profile(AbstractUser):
+    phoneNumber = models.CharField(max_length=10)
+    userType = models.CharField(max_length=4)

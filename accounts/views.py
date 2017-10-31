@@ -4,7 +4,7 @@ from django.http import HttpResponseRedirect
 from django.template.context_processors import csrf
 from django.shortcuts import render_to_response
 from django.contrib import auth
-from sherpa.models import Users
+from sherpa.models import Profile
 from django.contrib.auth import authenticate
 
 # Create your views here.            
@@ -19,9 +19,9 @@ def register_view(request):
         username = request.POST['username']
         password = request.POST['password']
 
-        users = Users(firstName=firstName, familyName=familyName, email=email, userType=userType, phoneNumber= phoneNumber, username=username, password=password)
-        #users.set_password(password)
-        users.save()
+        profile = Profile(firstName=firstName, familyName=familyName, email=email, userType=userType, phoneNumber= phoneNumber, username=username)
+        profile.set_password(password)
+        profile.save()
 
     	return render_to_response('register_success.html')
     else:
