@@ -2,14 +2,15 @@
 from __future__ import unicode_literals
 
 from django.test import TestCase
-from django.test import LiveServerTestCase
+#from django.test import LiveServerTestCase
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
+from django.contrib.staticfiles.testing import StaticLiveServerTestCase
 
 # Create your tests here.
 
 
-class AccountRegisterTestCase(LiveServerTestCase):
+class AccountRegisterTestCase(StaticLiveServerTestCase):
 
     def setUp(self):
         self.selenium = webdriver.Firefox()
@@ -22,7 +23,7 @@ class AccountRegisterTestCase(LiveServerTestCase):
     def test_register(self):
         selenium = self.selenium
         # Opening the application for testing
-        selenium.get('localhost:8000/sherpa/register/')
+        selenium.get('localhost:8081/sherpa/register/')
 
         # find the form element
         first_name = selenium.find_element_by_id('id_first_name')
