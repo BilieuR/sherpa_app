@@ -47,9 +47,11 @@ def location_list_view(request):
     }
     return render(request, 'location_list.html', context)
 
-def college_list_view(request):
-    locations = Location.objects.all()[:10]
+def category_list_view(request, category, category_title):
+    locations = Location.objects.filter(category=category)
     context = {
-        'locations': locations
+        'locations': locations,
+        'category': category,
+        'category_title' : category_title,
     }
-    return render(request, 'college_list.html', context)
+    return render(request, 'category_list.html', context)

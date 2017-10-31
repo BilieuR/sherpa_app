@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 {% include 'partials/header.html' %}
 
-	<h1>Colleges:</h1>
+	<h1>{{category_title}}:</h1>
 	<ul class="locations" style="list-style-type:none">
 	{% for location in locations %}
-	{% if location.category == "college" %}
 		<li>
 		<br><br><a href="/sherpa/details/{{location.id}}">{{location.title}}</a> {{location.description}}
 		</li>
-	{% endif %}
 	{% endfor %}
 	</ul>
-
+	
 {% include 'partials/footer.html' %}

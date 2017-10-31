@@ -1,9 +1,5 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Location</title>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+{% include 'partials/header.html' %}
     <style>
        #map {
         height: 400px;
@@ -14,11 +10,11 @@
   <body>
     <h1>{{location.title}}</h1>
     <p>{{location.description}}</p>
-
+    <h1>Location<h1>
     <div id="map"></div>
     <script>
       function initMap() {
-        var marker = {lat: -27.4954, lng: 153.0120};
+        var marker = {lat: {{location.latitude}}, lng: {{location.longitude}} };
         var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 15,
           center: marker
@@ -37,5 +33,5 @@
 
     <br>
     <p>Created on {{location.created_at}}</p>
-  </body>
-</html>
+{% include 'partials/footer.html' %}
+
