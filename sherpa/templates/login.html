@@ -14,12 +14,12 @@
             <h1 class="text-center">Sign In</h1>
             	<div class="panel-body">
                 <div class="form-group">
-									<form action="/sherpa/auth" method="post">{% csrf_token %}
+									<form action="/sherpa/auth/" method="post">{% csrf_token %}
 										<label for="username"> Username:</label><br>
 										<input class="input-lg form-control" type="text" name="username" value="" id="username">
 										<br>
-										<label for="username"> Password:</label><br>
-										<input class="input-lg form-control" type="text" name="username" value="" id="password">
+										<label for="password"> Password:</label><br>
+										<input class="input-lg form-control" type="text" name="password" value="" id="password">
 										<br>
 										<input class="btn btn-lg btn-primary" type="submit" value="Login" />
 									</form>

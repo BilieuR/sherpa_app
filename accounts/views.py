@@ -11,15 +11,15 @@ from django.contrib.auth import authenticate
 
 def register_view(request):
     if (request.method == 'POST'):
-    	firstName = request.POST['firstName']
-    	familyName = request.POST['familyName']
+    	first_name = request.POST['first_name']
+    	last_name = request.POST['last_name']
     	email = request.POST['email']
     	userType = request.POST['userType']
     	phoneNumber = request.POST['phoneNumber']
         username = request.POST['username']
         password = request.POST['password']
 
-        profile = Profile(firstName=firstName, familyName=familyName, email=email, userType=userType, phoneNumber= phoneNumber, username=username)
+        profile = Profile(first_name=first_name, last_name=last_name, email=email, userType=userType, phoneNumber= phoneNumber, username=username)
         profile.set_password(password)
         profile.save()
 
@@ -34,15 +34,17 @@ def login_view(request):
 
 
 def auth_view(request):
-	username = request.POST.get('username', '')
-	password = request.POST.get('password', '')
-	user = authenticate(username=username, password=password)
+    username = request.POST.get('username')
+    password = request.POST.get('password')
+    print username
+    print password
+    user = authenticate(request, username=username, password=password)
 
-	if user is not None:
-		auth.login(request, user)
-		return HttpResponseRedirect('/sherpa/loggedin')
-	else:
-		return HttpResponseRedirect('/sherpa/invalid')
+    if user is not None:
+    	auth.login(request, user)
+    	return HttpResponseRedirect('/sherpa/loggedin/')
+    else:
+    	return HttpResponseRedirect('/sherpa/invalid/')
 
 
 def loggedin_view(request):
