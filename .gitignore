@@ -4,3 +4,8 @@ staticfiles
 .env
 sherpa/bin
 
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
