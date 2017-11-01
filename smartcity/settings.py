@@ -75,7 +75,7 @@ WSGI_APPLICATION = 'smartcity.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
-SECRET_KEY = config('secretpass1')
+# SECRET_KEY = config('w0a4#oj-(^-c%1%tmn8h$&kxx646jq59#cn&j*b(oho@%p&g%1')
 
 DEBUG = config('DEBUG', default=False, cast=bool)
 
@@ -132,7 +132,9 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
-STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
+# STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
+STATIC_ROOT = os.path.normpath(os.path.join(BASE_DIR, 'staticfiles'))
+
 STATIC_URL = '/static/'
 
 # Extra places for collectstatic to find static files.
@@ -141,3 +143,6 @@ STATICFILES_DIRS = (
 )
 
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
