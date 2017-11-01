@@ -26,8 +26,9 @@ def add_view(request):
         category = request.POST['category']
         latitude = request.POST['latitude']
         longitude = request.POST['longitude']
+        rating = request.POST['rating']
 
-        location = Location(title=title, description=description, category=category, latitude=latitude, longitude=longitude)
+        location = Location(title=title, description=description, category=category, latitude=latitude, longitude=longitude, rating=rating)
         location.save()
 
         return redirect('/sherpa')
