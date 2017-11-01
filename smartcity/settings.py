@@ -75,6 +75,9 @@ WSGI_APPLICATION = 'smartcity.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
+SECRET_KEY = config('secretpass1')
+
+DEBUG = config('DEBUG', default=False, cast=bool)
 
 DATABASES = {
     'default': {
@@ -82,6 +85,8 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
+
 
 CACHES = {
     'default': {
